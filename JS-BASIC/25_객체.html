@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //Object mdn 검색: Object.assign() : 클래스명.정적(static) 메소드
+	//.assign()가 prototype에 속해있지 않아서 객체.assing()코딩시 에러이다.
+    const userAge={
+      //key : value,  (key값은 중복되면 덮어쓴다.)
+      name: 'kim',
+      age: 40
+    }
+    const userEmail={
+      name: 'lee',
+      email: 'thelee@gmail.com'
+    }
+    //.assign(타겟(대상)객체, 소스객체1[,소스객체2...]): 
+    // 소스객체1개이상을 데이터를 타겟객체로 복사하고 타겟객체를 반환한다.  
+    // const target=Object.assign(userAge, userEmail)
+    // console.log(target)  //{name: 'lee', age: 40, email: 'thelee@gmail.com'}
+    // console.log(userAge)  //{name: 'lee', age: 40, email: 'thelee@gmail.com'}
+    // console.log(target === userAge)  //true(참조값이 같다.)
+	
+	// userAge와 userEmail를 합하여 새로운 객체 생성하기
+    const target=Object.assign({}, userAge, userEmail)
+    console.log(target)  //{name: 'lee', age: 40, email: 'thelee@gmail.com'}
+    console.log(userAge)  //{name: 'lee', age: 40} 원본값 유지
+    console.log(target === userAge)  //false(참조값이 다르다.)
+
+    const a={k: 100}
+    const b={k: 100}
+    console.log(a===b)   //false(참조값이 다르다.)
+
+    const user={
+      name:'Hong',
+      age: 30,
+      email: 'thehong@gmail.com'
+    }
+    const keys=Object.keys(user)
+    console.log(keys)   //['name', 'age', 'email']
+    console.log(user['email'])  //객체 인덱싱 연산 ['키이름']
+    console.log(user.email)
+    keys.sort()  //키이름 정렬(그다지 중요치 않음)
+    console.log("sorted:",keys) //['age', 'email', 'name']
+    const values = keys.map(key=> user[key])
+    console.log(values);   //[30, 'thehong@gmail.com', 'Hong']
+
+    //문)위 예제를 map메소드를 사용하지 말고 반복문으로 출력하시오
+    const keyNames=[]
+    for(let key in user){
+      keyNames.push(key)
+    }
+    keyNames.sort()
+    console.log('sorted: ',keyNames)
+    for(let key of keyNames){
+      console.log(key+' : '+user[key])
+    }
+	
+	const newArr=[]
+    console.log('map메소드 구현')
+    //방법1
+    // for(let key of keys){
+    //   newArr.push(user[key])
+    // }
+    //방법2
+    // for(let idx in keys){
+    //   newArr.push(user[keys[idx]])
+    // }
+    //방법3
+    keys.forEach(key=>newArr.push(user[key]))
+    console.log("newArr 출력1---")
+    for(let val of newArr ){
+        console.log(val)
+    }
+    console.log("newArr 출력2---")
+    newArr.forEach(val=>console.log(val))
+
+
+
+    const memberList=[
+                        {name:'kim',age:20,addr:'서울'},
+                        {name:'lee',age:22,addr:'인천'},
+                        {name:'park',age:40,addr:'서울'}
+
+                      ]  
+    
+    let newObj={name:'cha'}
+    newObj.age=40
+    newObj.addr='인천'
+    memberList.push(newObj)
+    
+    console.log('memberList 출력...')
+    //console.log(memberList)
+    for(let obj of memberList){
+      for(let key in obj){
+        console.log(`${key} :${obj[key]}`)
+      }
+      console.log('-----------')
+    }
+    memberList.forEach(elemObj=>{
+      for(let key in elemObj){
+        console.log(`${key} :${elemObj[key]}`)
+      }
+      console.log('-----------') 
+    })
+
+    const memberObj={ members: [{name:'kim',age:20,addr:'서울'},
+                                {name:'lee',age:22,addr:'인천'},
+                                {name:'park',age:40,addr:'서울'}]
+                    }
+                    
+    console.log("memberObj 출력====")
+    
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

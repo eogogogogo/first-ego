@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Flex Container(부모 요소)*/
+        .container {
+            background-color: royalblue;
+            /*display:부모전용속성,
+			flex:부모요소는 block, 자식요소는 수평정렬함
+			inline-flex(사용빈도적음):부모요소는 inline, 자식요소는 수평정렬함 
+			*/
+            /*수평 주축 설정: 기본값(row),row-reverse: 자식요소를 오른쪽->왼쪽 배치 */
+            /* flex-direction: row-reverse; */
+            /*수직 주축 설정(사용빈도없음, display:block시 어짜피 수직이므로): column,column-reverse */
+            /* flex-direction: column-reverse; */
+            padding: 10px;
+            margin: 10px;
+       }
+
+        /*Flex Items(자식 요소)*/
+        .container .item {
+            width: 100px;
+            height: 100px;
+            border: 3px dashed red;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>

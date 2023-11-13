@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body{
+            /*body 너비를 뷰포트 100% 기본값auto  */
+            /* width: auto; */
+            /* body 높이를 뷰포트 100% */
+            height: 100vh;
+        }
+        div,
+        header,
+        nav,
+        section,
+        article,
+        aside,
+        footer {
+            border: 1px solid blue;
+            padding: 5px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        #total_wrap {
+            width: 800px;
+            
+            width: 600px;
+            margin: 0 auto;
+            /* 부모역할 공식*/
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            /* width: 800px;
+            height: 100px; */
+            line-height: 100px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            /* width: 780px;
+            height: 150px; */
+            box-sizing: border-box;
+            /* 부모역할 공식*/
+            position: relative;
+            overflow: hidden; 
+            padding:20px;
+        }
+
+        nav ul li {
+            float: left;
+            width: 90px;
+            height: 40px; 
+            line-height: 40px;
+            list-style: none;
+            border: 1px solid #dddddd;
+        }
+
+        /* #content_wrap {
+            width: 780px;
+            overflow: hidden;
+        } */
+        section {
+            /* width: 600px;*/
+            height: 250px; 
+            width: 70%;
+            /* 부모역할 공식*/
+            position: relative;
+            overflow: hidden;
+            float: left;
+        }
+
+        article {
+            box-sizing: border-box; 
+            height: 100px;
+            /* 왼쪽부터 정렬하려면 */
+            /* float: left; */
+        }
+
+        aside {
+            width: 19%;
+            height: 250px;
+            float: left;
+        }
+
+        footer {
+            box-sizing: border-box;
+            height: 100px;
+            line-height: 100px;
+            clear: both; 
+            /*section, aside와 같은부모div에 속해 있다면 생략가능*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="total_wrap">
+        
+        <header>
+            HEADER
+        </header>
+        <nav>
+            <p>NAVIGATION</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Java Script</li>
+                <li>j-Query</li>
+                <li>Java</li>
+            </ul>
+
+        </nav>
+       <!-- <div id="content_wrap"> -->
+        <section>
+            SECTION
+            <article>
+                article1
+            </article>
+            <article>
+                article2
+            </article>
+        </section>
+        <aside>
+            ASIDE<br>
+            BANNER<br>퀵메뉴
+        </aside>
+        <!-- </div> -->
+
+        <footer>
+            FOOTER
+        </footer>
+    </div>
+</body></html>

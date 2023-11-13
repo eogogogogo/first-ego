@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <form name="loginFrm" action="access">
+    <input type="text" name="userId2" id="userId" placeholder="아이디 입력하세요"><br>
+    <input type="password" name="passwd2" id="passwd" placeholder="비번 입력하세요"><br>
+    <input type="button" value="일반버튼" onclick="check()">
+    <input type="submit" value="서버전송1">
+    <button>서버전송2</button>
+  </form>
+  <script>
+    function check(){
+      let id=document.getElementById('userId').value;
+      let pw=document.getElementById('passwd').value;
+      // console.dir(idElem);
+      if(id=='' || pw==''){
+        alert("아이디 또는 비번을 입력하세요");
+        return false;
+      }
+      document.loginFrm.submit();  //서버전송
+    }
+  </script>
+</body>
+</html>

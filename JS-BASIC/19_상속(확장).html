@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //java class와 아주 유사함
+	//생성자 및 메소드객체가 prototype에 1번 생성됨
+    class Car{
+      constructor(gasoline){
+        //super()에러
+        this.gasoline=gasoline
+      }
+      showGuageInfo(){
+        console.log('gas: ', this.gasoline)
+      }
+    }
+    class HybridCar extends Car{
+      constructor(gasoline, electric){
+        super(gasoline)
+        this.electric=electric
+      }
+      showGuageInfo(){
+      super.showGuageInfo()
+        //console.log('gas: ', this.gasoline)  //가능
+        console.log('elec: ', this.electric)
+      }
+    }
+    class HybridWaterCar extends HybridCar{
+      constructor(gasoline, electric, water){
+        super(gasoline,electric)
+        this.water=water
+      }
+      showGuageInfo(){
+        super.showGuageInfo()
+        //console.log('gas: ', this.gasoline) //가능
+        //console.log('elec: ', this.electric) //가능
+        console.log('water: ', this.water)
+      }
+    }
+  const car1=new HybridWaterCar(50,1000,30)
+  const car2=new HybridCar(40,500)
+  console.log(car1)
+  car1.showGuageInfo()
+  console.log(car2)
+  car2.showGuageInfo()
+  </script>
+</body>
+</html>

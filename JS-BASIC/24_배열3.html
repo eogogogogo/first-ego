@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //원본데이터 변경됨
+    const fruits = ['Banana', 'Apple', 'Cherry']
+    const numbers = [8, 5, 6, 2, 4]
+      
+    //.sort()
+    // fruits.sort(); //문자열 오름정렬
+    // console.log(fruits);
+    // console.log(fruits.toString());  //문자열로 출력
+    // numbers.sort(); //숫자 오름정렬
+    // console.log(numbers);
+    // console.log(numbers.toString());  //문자열로 출력
+
+    //.reverse(): 배열원본을 뒤집는다. 내림차순이 아니다.
+    //  fruits.reverse(); //배열 역정렬 : 현재 상태를 뒤집는다.
+    //  console.log(fruits)
+    //  numbers.reverse(); //배열 역정렬
+    //  console.log(numbers)
+    //문자열 내림 정렬(숫자는 안됨) 
+    // fruits.sort(function (a, b) {
+    //   if (a < b) return 1; //return b-a; 문자열은 뺄셈이 안되므로 줄이면 안됨
+    //   if (a > b) return -1;
+    //   if (a === b) return 0;
+    // });
+    // console.log(fruits)
+
+    //숫자 정렬 방법
+    //1.오름정렬
+    //numbers.sort(function(a,b){return a-b});
+    //numbers.sort((a,b)=>a-b);
+    //2.내림정렬
+    //numbers.sort((a,b)=> b-a);
+    //console.log(numbers);
+  </script>
+</body>
+
+</html>

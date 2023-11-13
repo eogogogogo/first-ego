@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Array: 배열 객체
+    //const numbers=new Array(1,2,3,4)  
+    const numbers=[1,2,3,4]  //요소(Element)==항목(item)
+    const fruits=['Apple','Banana','Cherry']
+    console.log(numbers)
+    console.log(fruits)
+    console.log(numbers.length) //4
+    console.log(fruits.length)  //3
+    console.log([1,2].length)   //2
+    console.log([].length)   //0
+    //concat():2개의 배열데이터를 병합
+    console.log(numbers.concat(fruits))  //[1,2,3,4,"Apple","Banana","Cherry"]
+    console.log(numbers)   //[1,2,3,4]
+    console.log(fruits)     //["Apple","Banana","Cherry"]
+    //forEach(): 배열의 길이만큼 콜백함수를 호출함, 리턴값 없음
+    fruits.forEach(function(element, index, array){
+      console.log(element,index,array)  //array매개변수는 사용할 필요 없음
+    })
+    fruits.forEach(function(fruit, i){
+      console.log(fruit,i)  //array매개변수는 사용할 필요 없음
+    })
+    //문)위 예제를 화살표 함수로 변환할것.
+    fruits.forEach((fruit, i)=> console.log(fruit,i))
+    
+    const a=fruits.forEach((fruit,idx)=>console.log(`${fruit}-${idx}`))
+    console.log(a) //undefined, forEach()반환값이 없음 
+    //map(): 배열의 길이만큼 콜백함수를 호출함, 리턴값 배열(주의)
+    // const b=fruits.map(function(fruit,idx){
+    //   //return `${fruit}-${idx}`
+    //   return {id: idx, name: fruit}
+    // })
+    //문제) 위예제를 화살표 함수로 변환할 것.
+    //const b=fruits.map((fruit,idx)=>`${fruit}-${idx}`)
+	//['Apple-0', 'Banana-1', 'Cherry-2']
+    //객체 반환시 ({}) 소괄호 필수
+    const b=fruits.map((fruit,idx)=>({id: idx, name: fruit}))  
+    console.log(b)  
+//[{id: 0, name: 'Apple'},{id: 1, name: 'Banana'},{id: 2, name: 'Cherry'}]
+
+
+  </script>
+</body>
+</html>

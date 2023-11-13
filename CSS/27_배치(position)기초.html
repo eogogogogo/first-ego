@@ -1,0 +1,62 @@
+﻿<html>
+<head>
+    <title>position 예제</title>
+    <meta charset="utf-8">
+    <style>
+        body{
+            height: 3000px;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+        }
+        div.static{
+			position: static;
+            /*기본값이고 문서의 정상적인 흐름에 따라 배치됨*/
+            background-color: yellow;
+            /*stacit에서는 top, left적용되지 않음*/
+			top:100px;
+            left: 200px;
+        }
+        div.relative{
+            background-color: aqua;
+            position: relative;
+            /*정상적인 위치에서 상대적으로 요소가 배치됨*/
+            top: 100px;
+            left: 20px;
+        }
+        div.absolute{
+            position: absolute;
+            /*static 부모 역할 못함
+              부모(보통relative)가 있다면 부모좌상단을 기준으로 배치됨*/
+            width: 100px;
+            height: 100px;
+            border: 3px solid red;
+            left: 50%;
+            top: 50%;
+        }
+        div.fixed{
+            background-color: coral;
+            position:fixed;
+            /*화면스크롤시 같은 위치에 고정됨*/ 
+            top: 10%;
+            right:10%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="static">
+        position:static
+    </div>
+    <div class="relative">
+        position:relative 
+		<div class="absolute">position:<br/>absolute</div>		
+    </div>  
+    <div class="fixed">
+        position:fixed
+    </div>
+    
+</body>
+</html>

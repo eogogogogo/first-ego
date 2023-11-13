@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent{
+            /*부모 Div는 overflow:hidden을 무조건 설정
+			 부모보다 자식의 width,height가 큰 경우 잘라내기 위해 */
+             border:3px solid black;
+            overflow:hidden;
+            /*z-index: 부모가 무조건 자식 아래에 위치한다.*/
+            
+        }
+        .child{
+            border:1px solid blue;
+            float:left;
+            /*디테일하게 영역을 설정하기 위해선 float을 사용할 것.*/ 
+            /*display: inline-block;*/
+            height: 100px;
+           background-color: antiquewhite;
+           margin:10px;
+        }
+  </style>
+</head>
+
+<body>
+  <!--부모 div는 overflow:hidden으로 설정한다.-->
+  <div id="parent">
+    <div class="child">자식 DIV</div>
+    <div class="child">자식 DIV</div>
+  </div>
+</body>
+
+</html>

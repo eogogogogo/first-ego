@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Flex Container(부모요소) */
+    #wrap {
+      /* overflow: hidden;  필요없음*/
+      display: flex;
+      /* 너비 설정하지 말것 */
+      max-width: 300px;
+      height: 500px;
+      /* 자동 줄바꿈 */
+      flex-wrap: wrap;
+      /* 수평 정렬 */
+      justify-content: center;
+      /* 수직 정렬1:  flex-wrap:wrap 설정해야 정렬가능함*/
+      /* align-content: center; */
+      /* 수직 정렬2: flex-wrap:wrap 필요없음,
+      자식요소를 한줄마다 수직 정렬방식(align-content보다 많이 사용) */
+      align-items:center;
+      /* 수직 정렬 stretch시 자식요소 height 삭제할것  */
+      /* align-items: stretch; */
+      padding: 10px;
+      border: 1px dashed red;
+    }
+ /* Flex Items (자식 요소)*/
+    .floating-box {
+      /* div내 컨텐츠(문자) 정렬위해 설정 */
+      display: flex;
+      /* 컨텐츠(문자) 수평 정렬 */
+      justify-content: center;
+      /* 컨텐츠(문자) 수직 정렬 */
+      align-content: center;
+      width: 50px;
+      /* 수직 정렬 stretch시 height생략해 볼것 */
+      height: 100px;
+      border: 3px solid orange;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Flex: 정렬</h2>
+  <div id="wrap">
+    <div class="floating-box">box1</div>
+    <div class="floating-box">box2</div>
+    <div class="floating-box">box3</div>
+    <div class="floating-box">box4</div>
+    <div class="floating-box">box5</div>
+    <div class="floating-box">box6</div>
+    <div class="floating-box">box7</div>
+    <div class="floating-box">box8</div>
+  </div>
+</body>
+
+</html>

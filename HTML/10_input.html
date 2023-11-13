@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <fieldset>
+    <legend> text & password & hidden& button</legend>
+    <input id="id" type="text" name="id"  placeholder="아이디 입력하세요"> <br>
+    <input id="pw" type="password" name="pw" maxlength="8" placeholder="비번 입력하세요"><br>
+    <input id="pNo" type="hidden" name="pNo" value="5555-5555">
+    <input type="button" value="로그인" onclick="showInfo()">
+  </fieldset>
+  <fieldset>
+    <legend>checkbox & radio & label</legend>
+    <input id="apple" name="fruit" type="checkbox" value="사과" checked>
+    <label for="apple">Apple</label>
+                       <!-- fruit=['사과', '바나나'] -->
+    <input id="banana" name="fruit" type="checkbox" value="바나나">
+    <label for="banana">Banana</label><br>
+    성별: <input type="radio" name="gender" checked value="male"> 남자
+    <input type="radio" name="gender" value="female"> 여자
+  </fieldset>
+
+  <fieldset>
+    <legend>file</legend>
+    <input type="file">
+  </fieldset>
+
+  <fieldset>
+    <legend>e-mail & url & time & date</legend>
+    <form action="server_url">
+      email: <input type="email" name="email"><br>
+      url: <input type="url"><br>
+      time: <input type="time"><br>
+      date: <input type="date"><br>
+      month: <input type="month" name="bdaymonth"><br>
+      WEEK: <input type="week"><br>
+      local time: <input type="datetime-local"><br>
+      <button>전송</button>
+      <input type="reset" value="취소">
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>color</legend>
+    Select your favorite color: 
+    <input type="color" name="favcolor"><br>	  
+  </fieldset>
+  <fieldset>
+    <legend>file</legend>
+    <form>
+      Select a file: <input type="file" name="img" multiple>
+      <input type="submit">
+    </form>			
+  </fieldset>
+  <fieldset>
+    <legend>e-mail</legend>
+    <form>
+      <!--submit버튼일때만 입력값 요구 메시지 나옴-->
+      <!--ID: <input type="text" name="name" required>-->
+      <!--읽기만 가능-->
+      <!--ID: <input type="text" name="name" readonly>-->
+      E-mail: <input type="email" name="usremail">
+      <input type="submit">
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>image</legend>
+    <form>
+      First name: <input type="text" name="fname"><br>
+      Last name: <input type="text" name="lname" value="KIM" disabled><br>
+      <input type="image" src="btn.png" alt="Submit" width="48" height="48">
+    </form>	
+  </fieldset>	
+  
+  <fieldset>
+    <legend>number & range</legend>
+    <form>
+      NUMBER(1~10): 
+      <input id="number" type="number" name="quantity" 
+      min="1" max="10" value="1">
+      <br>
+      RANGE(0~10): <input id="range" type="range" 
+      name="points" min="0" max="10" value="0" step="2">
+      <br>
+      <input type="button" value="제출" onclick="valueInfo()">
+    </form>	
+  </fieldset>	
+  <fieldset>
+    <select name="cars">
+      <option value=""></option>
+      <option value="volvo">Volvo</option>
+      <option value="kia" selected>Kia</option>
+      <option value="bentz">Bentz</option>
+      <option value="audi">Audi</option>
+    </select>
+
+  </fieldset>
+
+  <script>
+    function showInfo() {
+      let id = document.getElementById('id').value;
+      let pw = document.getElementById('pw').value;
+      let pNo = document.getElementById('pNo').value;
+      console.log('id:'+id+'\n pw:'+pw);
+      console.log('pNo:'+pNo);
+      alert(id+",\n"+pw);
+    }
+  </script>
+  <script>
+		function msg() {
+			alert("Hello world!");
+		}
+		function valueInfo(){
+			var val1 = document.getElementById("number").value;
+			var val2 = document.getElementById("range").value;
+			alert("number : "+val1+"\n"+"range : " + val2 );
+		}
+	</script>
+</body>
+
+</html>

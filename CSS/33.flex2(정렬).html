@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Flex Container(부모 요소)*/
+        .container {
+            background-color: royalblue;
+            /*display(부모전용속성): flex;
+            부모요소는 block이고,  Flex Items(자식 요소)를 수평정렬함*/
+            display: flex;
+            /*display: inline-flex; 부모요소는 inline이고, 자식요소는 수평정렬(사용빈도 적음) */
+            /*수평 주축 설정: 기본값(row),row-reverse: 자식요소를 오른쪽->왼쪽 배치 */
+            /*flex-direction: row-reverse;*/
+            padding: 10px;
+            margin: 10px;
+
+            width: 300px;
+            /* 자식높이가 부모높이를 초과시 height 삭제 */
+            /* height: 200px;  */
+            height: 400px; 
+            /*flex-wrap: 기본값(nowrap)_Flex Items(자식 요소)를 줄바꿈 안함(너비가 줄어들수 있음)
+              wrap: 자식요소를 줄바꿈(너비 줄지 않음)
+            */
+            flex-wrap: wrap;
+
+            /*justify-content: 자식요소 수평 정렬방식*/
+            /*기본값:flex-start(왼쪽정렬),flex-end(오른쪽정렬), center(가운데정렬)  */
+            /* justify-content:center ; */
+            
+            /*align-content: 자식요소가 여러줄일때 수직 정렬방식(한줄일때 동작안함????테스트해보니 한줄도 정렬됨)
+              flex-wrap: wrap설정해야 정렬가능함, 그래서 align-items를 많이 사용함 */
+            /*기본값:stretch(높이를 늘림), flex-start(위쪽정렬),flex-end(아래쪽정렬), center(가운데정렬)  */
+            /* align-content:flex-end ; */
+
+             /*align-items: 자식요소를 한줄마다 수직 정렬방식(align-content보다 많이 사용)*/
+            /*기본값:stretch(높이를 늘림), flex-start(위쪽정렬),flex-end(아래쪽정렬), center(가운데정렬)  */
+            align-items: flex-start;
+    
+
+        }
+
+        /*Flex Items(자식 요소)*/
+        .container .item {
+            width: 100px;
+            /* 수직 정렬 stretch시 height생략해 볼것 */
+            height: 100px;
+            border: 3px dashed red;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

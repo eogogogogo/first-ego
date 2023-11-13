@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     div{
+      width: 300px;
+      height: 400px;
+      background-color: orange;
+      /* 경로에 특수문자가 있을경우 반드시 ""로 묶을것 */
+      background-image: url("../img/logo.png");
+      /* 이미지 비율이 깨짐 */
+	  /* background-size: 300px 400px ; */
+      /* 이미지 사이즈(비율은 유지되고 확대,축소됨): 기본값(auto), px, cover(배경사이즈의 더 넓은너비에 이미지맞춤), contain(더 짧은너비에 맞춤) */
+	  background-size: cover ;
+      /* repeat-x(수평반복),  repeat-y(수직반복) */
+      background-repeat: no-repeat;
+      /*방법1: top,bottom,left,right(조합가능), center*/
+      /*방법2: x축:100px, y축:30px  */
+      /* background-position: top right; */
+      /* srcroll: 이미지가 같이 스크롤, fixed: 스크롤 안됨 */
+      /* 스타벅스 사이트에 사용 예시 나옴 */
+      /* background-attachment: fixed; */
+    }
+    /* background-attachment 속성 사용시 설정 ; */
+    body{
+      height: 3000px;
+    }
+
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

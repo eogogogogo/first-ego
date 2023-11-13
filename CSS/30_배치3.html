@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      background-color: royalblue;
+      /* absolute, fixed는 위치상의 부모 구조가 무너지는 경우가 있다. */
+      position: relative;
+      /* overflow: hidden; */
+    }
+
+    .container .item {
+      width: 120px;
+      height: 120px;
+      border: 4px dashed red;
+    }
+
+    .container .item:nth-child(1) {
+      /* position:static; */
+      background-color: orange;
+      
+    }
+
+    .container .item:nth-child(2) {
+      background-color: orangered;
+      position: absolute;
+      top: 50px;
+      left: 100px;
+      z-index: 1;
+    }
+
+    .container .item:nth-child(3) {
+      background-color: aqua;
+      /* position이 없이 z-index가 높아도 우선순위에 밀린다. */
+      position: absolute;
+      bottom: -30px;
+      right: -10px;
+      z-index:2;
+    }
+    span{
+      width: 100px;
+      height: 100px;
+      background: orange;
+      font-size: 40px;
+      /* absolute or fixed일때 display는 block로 변환된다.*/
+      position:absolute;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- z-index속성: 값이 높을수록 위에 쌓인다(기본값:auto(0), 너무큰수는 관리가 힘듬) 
+    1.요소에 position속성의 값이 있는 경우 위에 쌓임(static 제외)
+    2.1번 조건이 같은 경우, z-index속성의 숫자 값이 높을 수록 위에 쌓임
+    3.1번2번 조건까지 같은 경우, html의 다음 구조일 수록 위에 쌓임
+  -->
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+  <hr>
+  <span>Hello!</span>
+</body>
+
+</html>

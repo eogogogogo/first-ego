@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //this
+    //일반 함수는 (호출 위치!)에서 따라 this정의!
+    //화살표 함수는 자신이 (선언된 함수 범위!)에서 this정의!
+    const kim={
+      name: 'kim',
+      normal: function(){
+        console.log(this.name)
+        console.log(this)  //kim객체
+      },
+      arrow:()=>{  //특정 함수범위에 선언되고 있지 않음
+        console.log(this.name)
+        console.log(this)  //window객체
+      }
+    }
+    kim.normal()  //kim 
+    kim.arrow()   //'' or undefined
+    
+    const lee={
+      name: 'lee',
+      normal:kim.normal,
+      arrow: kim.arrow
+    }
+    //호출위치가 여기! 그래서 this는 lee객체 참조함
+    lee.normal();
+    //선언된 위치(범위)는 그대로임! this는 window객체 참조함
+    lee.arrow();
+
+    // 생성자 함수에서 getFullName을 화살표함수로
+    // 만들어서 this값을 확인해보자
+
+    const timer={
+      name: 'kim',
+      timeout: function(){
+        //setTimeout의 내부에서 콜백을 호출중이라서 name출력안됨
+        //setTimeout(function(){
+        //  console.log('t:', this.name)  //window 객체
+        //}, 2000)
+        //timer객체의 timeout메소드에 선언되었으므로 name출력됨        
+        //setTimeout함수에서는 화살표함수를 쓰는것이 좋다.
+        setTimeout(()=>{
+          console.log('t:', this.name) //timer객체
+        }, 2000)
+      }
+    }
+    timer.timeout()
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

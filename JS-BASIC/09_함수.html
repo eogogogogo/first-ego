@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //기명 함수
+    function sum(x, y){
+      //console.log(x+y)
+      return x+y;
+    }
+    const a = sum(1, 3)
+    const b = sum(4, 12)
+    console.log(a)
+    console.log(sum(1, 3))
+    console.log(b)
+    console.log(sum(4, 12))
+    console.log(a + b)
+    console.log(sum(1, 3) + sum(4, 12))
+    //익명 함수
+    //함수도 객체이다.
+    const sum2 = function (x, y) {
+      if (x < 2) {
+        return
+      }
+      return x + y
+    }
+    console.log(sum2); //sum2:함수객체 참조변수
+    console.log(sum2(1,3))  //undefined
+    console.log(sum2(4,3))  //7
+    //인자가 너무많을때 매개변수 생략(가독성이 떨어짐)
+    function sum3(){
+      console.log(arguments) //내장 매개변수  
+      return arguments[0]+arguments[1]
+    }
+    console.log(sum3(3,7));
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

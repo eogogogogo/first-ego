@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #bg{    
+        /* display: flex;   */
+        /* flex-wrap:wrap ;           */
+        background-color: black;
+        opacity: .5; 
+        /* width: auto;     */
+        height: 100vh;
+        /*하늘에서 바라본 건물의 높이이다.
+      부모,자식div간에는 적용되지 않음
+    */
+/* z-index: 2; */
+    }
+    #popup {
+        text-align: center;
+        width: 500px;
+        height: 600px;
+        margin:0 auto; /*width있을 때덩어리 가운데 정렬*/
+        background-color:yellow;
+        /* z-index: 3; */
+    }
+</style>
+</head>
+<body>
+  <div id="bg">
+    <div id="popup">
+        <h2>공지사항-LightBox</h2>
+    </div>
+</div>
+</body>
+</html>

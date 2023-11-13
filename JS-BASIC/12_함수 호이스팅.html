@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //호이스팅(Hoisting)
+    //함수 선언부가 유효범위 최상단으로 끌어올려지는 현상
+    const a=7
+    // double() //에러,double 변수가 선언되기 전    
+    // const double=function(){
+    //   console.log(a*2)
+    // }
+    double() //ok, double함수가 호이스팅 됨
+    //이런 성질을 이용해서 호출제어부를 먼저쓰면 가독성이 좋다.     
+    function double(){
+      console.log(a*2)
+    }
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

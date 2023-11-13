@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //호이스팅(hoisting)이란
+//자바스크립트 함수는 실행되기 전에 함수 안에 필요한 변수값들을 모두 모아서 유효 범위의 최상단에 선언한다.
+//자바스크립트 Parser가 함수 실행 전 해당 함수를 한 번 훑는다.
+//함수 안에 존재하는 변수/함수선언에 대한 정보를 기억하고 있다가 실행시킨다.
+//유효 범위: if,for단위 블록{}내에 변수를 선언해도 유효범위는 function단위 블록 {}이다., 
+
+//호이스팅의 대상
+//var 변수 선언과 함수선언문에서만 호이스팅이 일어난다. 함수 표현식은 호이스팅 안됨.
+//var 변수/함수의 선언만 위로 끌어 올려지며, 할당은 끌어 올려지지 않는다.
+
+//let/const 변수 선언과 함수표현식에서는 호이스팅이 발생하지 않는다.
+//java처럼 if, for단위 블록{}내에 변수를 선언하면 해당{}이 유효범위다. 
+		
+	//지역변수>전역변수 
+const pi = 3.14; //전역 상수변수(global v)
+
+fct1();
+fct2(3,5);
+
+function fct1() {
+    //var a,b; 함수의 상단에 호이스팅
+    //console.log('a: ',a)  //var:undefined, let,const:error
+    //console.log('b: ',b)  //var:undefined 
+    let a = 100,b = 200; //지역변수(local variable)
+
+    if (1) {
+        let a = 30,b = 40; //java error, 위의 const와 let을 var로 변경해 보자.
+        console.log("1=" + a);
+        console.log("1=" + b);
+    }
+    console.log(a);  //var는 마지막에 선언된 변수가 위의 변수를 덮어버린다.
+    console.log(b);  //let,const는 100, 200
+    
+    console.log('전역변수:' + pi)
+}
+
+function fct2(a, b) { //함수정의부
+  console.log('fct2 call:', a, b)  
+  console.log('gv:' + pi);
+    
+}
+//메소드 오버로딩은 없지만 유연하다.
+fct2()   
+fct2(10)
+fct2(10,20,30)
+
+//함수선언부는 호이스팅 되지 않음
+//    const fct=function(){  //익명 함수
+//        console.log("함수 출력");
+//    };
+//    fct();
+//    console.log(typeof fct);
+
+function test(show) {
+    show();
+}
+//ES6 화살표함수=> , 자바 람다(lambda) ->
+
+test(() => {
+    console.log('function call');
+    console.log('second line');
+});
+// test(function() {
+//      console.log('function call');
+//      console.log('second line');
+// });
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

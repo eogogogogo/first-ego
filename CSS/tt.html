@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Flex Container(부모 요소) */
+        #wrap{
+            display:flex;
+            /* 자동 불가꿈 */
+            flex-wrap: wrap;
+            width: 500px;
+            /* 수평 정렬 */
+            justify-content: center;
+            /* 수직 정렬 */
+            align-items: stretch;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        /* Flex Items(자식 요소)*/
+        .item{
+            /* float:left; */
+            width: 50px;
+            height: 100px;
+            border: 3px solid orange;
+            display:flex;
+              /* 수평 정렬 */
+              justify-content: center;
+            /* 수직 정렬 */
+            align-items: center;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex : 정렬</h1>
+    <div id="wrap">
+        <div class="item">box1</div>
+        <div class="item">box2</div>
+        <div class="item">box3</div>
+        <div class="item">box4</div>
+        <div class="item">box5</div>
+        <div class="item">box6</div>
+        <div class="item">box7</div>
+        <div class="item">box8</div>
+    </div>
+</body>
+</html>

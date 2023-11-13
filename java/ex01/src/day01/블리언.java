@@ -1,0 +1,23 @@
+package day01;
+
+public class 블리언 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		boolean a = true;
+		boolean b = false;
+		System.out.println(a);
+		System.out.println(b);
+		
+		int aa = 9;
+		int bb = 4;
+		
+		boolean c = aa > bb;
+		boolean d = aa < bb;
+		System.out.println(c);
+		System.out.println(d);
+		
+		
+	}
+
+}
